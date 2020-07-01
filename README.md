@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 ## Experiments
 
-### Train the model
+### Train models
 
 For example, for MNIST with CNN, run this command to train the model:
 
