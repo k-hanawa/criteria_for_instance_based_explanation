@@ -4,7 +4,7 @@ Source code for [Evaluation Criteria for Instance-based Explanation](https://arx
 
 
 ## Setup
-Download TREC dataset from [here](https://cogcomp.seas.upenn.edu/Data/QA/QC/) to `data/trec/train.txt` and `data/trec/test.txt`.
+- Download TREC dataset from [here](https://cogcomp.seas.upenn.edu/Data/QA/QC/) to `data/trec/train.txt` and `data/trec/test.txt`.
 
 
 ## Requirements
@@ -71,7 +71,6 @@ python src/torch/train_mobilenetv2.py -out results/models/cifar10_mobilenet_0 --
 First, run the following command to score all training instances.
 
 ```eval
-python src/identical_instance_test.py --saved-dir results/models/mnist_cnn_0 --dataset mnist --model cnn --test-size 500 --seed 0 --out results/all_scores/identical_instance_test/score_mnist_cnn.0.pkl --gpu 0
 python src/identical_class_test.py --saved-dir results/models/merged_mnist_cnn_0 --dataset mnist --model cnn --test-size 500 --seed 0 --out results/all_scores/identical_class_test/score_mnist_cnn.0.pkl --gpu 0
 python src/identical_subclass_test.py --saved-dir results/models/mnist_cnn_0 --dataset mnist --model cnn --test-size 500 --seed 0 --out results/all_scores/identical_subclass_test/score_mnist_cnn.0.pkl --gpu 0
 ```
@@ -98,7 +97,6 @@ python src/identical_subclass_test.py --saved-dir results/models/mnist_cnn_0 --d
 
 For cifar10 with MobileNetV2, use the following command instead.
 ```
-python src/torch/identical_instance_test.py --saved-dir results/models/cifar10_mobilenet_0 --test-size 500 --seed 0 --out results/all_scores/identical_instance_test/score_mnist_mobilenet.0.pkl --gpu 0
 python src/torch/identical_class_test.py --saved-dir results/models/cifar10_mobilenet_0 --test-size 500 --seed 0 --out results/all_scores/identical_class_test/score_mnist_mobilenet.0.pkl --gpu 0
 python src/torch/identical_subclass_test.py --saved-dir results/models/merged_cifar10_mobilenet_0 --test-size 500 --seed 0 --out results/all_scores/identical_subclass_test/score_mnist_mobilenet.0.pkl --gpu 0
 ```
@@ -106,7 +104,6 @@ python src/torch/identical_subclass_test.py --saved-dir results/models/merged_ci
 Then, run the following command to calculate the success rate.
 
 ```eval
-python src/eval_success_rate_identical_instance.py --input results/all_scores/identical_instance_test/score_mnist_cnn.0.pkl --out results/succes_rate/identical_instance_test/sr_mnist_cnn.0.txt
 python src/eval_success_rate_identical_class.py --input results/all_scores/identical_class_test/score_mnist_cnn.0.pkl --out results/succes_rate/identical_class_test/sr_mnist_cnn.0.txt --top-k 1
 python src/eval_success_rate_identical_class.py --input results/all_scores/identical_class_test/score_mnist_cnn.0.pkl --out results/succes_rate/top10_identical_class_test/sr_mnist_cnn.0.txt --top-k 10
 python src/eval_success_rate_identical_subclass.py --input results/all_scores/identical_subclass_test/score_mnist_cnn.0.pkl --out results/succes_rate/identical_subclass_test/sr_mnist_cnn.0.txt --top-k 1
@@ -126,10 +123,10 @@ All figures in the paper can be found in the ju[yter notebook below:
 
 ## Citation
 ```
-@article{hanawa2020evaluation,
-  title={Evaluation Criteria for Instance-based Explanation},
+@inproceedings{hanawa2021evaluation,
+  title={Evaluation of Similarity-based Explanations},
   author={Kazuaki Hanawa and Sho Yokoi and Satoshi Hara and Kentaro Inui},
-  year={2020},
-  journal={arXiv preprint:2006.04528}
+  booktitle={Proceedings of the Ninth International Conference on Learning Representations},
+  year={2021},
 }
 ```

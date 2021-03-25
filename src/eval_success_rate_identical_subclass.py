@@ -3,8 +3,6 @@
 import argparse
 from tqdm import tqdm
 import pickle
-import os
-import json
 import numpy as np
 from collections import defaultdict
 

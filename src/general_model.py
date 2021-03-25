@@ -148,9 +148,6 @@ class GeneralModel(chainer.Chain):
     def get_inverse_hvp_lissa(self, v,
                               batch_size=None,
                               scale=10, damping=0.0, num_samples=1, recursion_depth=1000):
-        """
-        This work
-        """
         inverse_hvp = 0
         print_iter = 100
 
