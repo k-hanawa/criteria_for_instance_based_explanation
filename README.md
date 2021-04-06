@@ -1,4 +1,4 @@
-# Evaluation Criteria for Instance-based Explanation
+# Evaluation of Similarity-based Explanations
 
 Source code for [Evaluation of Similarity-based Explanations](https://openreview.net/forum?id=9uvhpyQwzM_), which will be presented at [ICLR 2021](https://iclr.cc/Conferences/2021).
 
